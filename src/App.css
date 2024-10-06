@@ -1,0 +1,23 @@
+.Nav {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 50px;
+  cursor: pointer;
+}
+
+.CreatePost {
+  text-align: center;
+}
+
+input[type="text"] {
+  margin: 5px;
+}
+
+textarea {
+  margin: 5px;
+}
+
+.CreatePost button {
+  width: 30%;
+  cursor: pointer;
+}
