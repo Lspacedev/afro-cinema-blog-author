@@ -1,14 +1,8 @@
-import { useEffect, useState } from "react";
-import { useNavigate, useParams, Outlet } from "react-router-dom";
-import PostCard from "./PostCard";
-
-function AllPosts() {
+import { useState, useEffect } from "react";
+function Stats() {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(false);
-  const { post_id } = useParams();
-
   const token = localStorage.getItem("token");
-
   useEffect(() => {
     fetchAllPosts();
   }, []);
@@ -33,20 +27,26 @@ function AllPosts() {
       setLoading(false);
     }
   }
+
   if (loading) return <div className="loading">Loading...</div>;
   return (
-    <div className="AllPosts">
-      {post_id !== "" && typeof post_id !== "undefined" ? (
-        <Outlet />
-      ) : (
-        <div className="posts-div">
-          {posts &&
-            posts.length > 0 &&
-            posts.map((post, i) => <PostCard key={i} post={post} />)}
-        </div>
-      )}
+    <div className="Stats">
+      <div className="totalPosts stat">
+        <div>Total Posts</div>
+        <div>{posts && posts.length}</div>
+      </div>
+      <div className="pubPosts stat">
+        <div>Published Posts</div>
+
+        <div>{posts.filter((post) => post.published === true).length}</div>
+      </div>
+      <div className="unpubPosts stat">
+        <div>Unpublished Posts</div>
+
+        <div>{posts.filter((post) => post.published === false).length}</div>
+      </div>
     </div>
   );
 }
 
-export default AllPosts;
+export default Stats;
