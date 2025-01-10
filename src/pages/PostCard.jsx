@@ -6,7 +6,6 @@ function PostCard({ post }) {
   function handleNavigateSubPage() {
     navigation(`/home/posts/${post.id}`);
   }
-  console.log({ post });
   return (
     <div className="PostCard" onClick={handleNavigateSubPage}>
       <div>{post.title}</div>

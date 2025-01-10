@@ -18,7 +18,7 @@ function Login() {
 
       let userData = { username: username, password: password };
 
-      const res = await fetch("http://localhost:3000/log-in", {
+      const res = await fetch(`${import.meta.env.VITE_PROD_URL}/log-in`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(userData),
@@ -36,6 +36,28 @@ function Login() {
     } catch (err) {
       console.log(err);
       setLoading(false);
+    }
+  }
+  async function guestSignIn() {
+    setLoading(true);
+
+    try {
+      const res = await fetch(`${import.meta.env.VITE_PROD_URL}/guest-log-in`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "Content-length": 0 },
+      });
+      const data = await res.json();
+      setLoading(false);
+      if (typeof data.errors !== "undefined") {
+        setErrors(data.errors);
+      } else {
+        alert(data.message);
+        localStorage.setItem("token", data.token);
+        localStorage.setItem("userId", data.userId);
+        navigation("/home");
+      }
+    } catch (err) {
+      console.log(err);
     }
   }
 
@@ -75,6 +97,12 @@ function Login() {
               onClick={loading ? console.log() : login}
             >
               {loading ? "Loading..." : "Submit"}
+            </button>
+            <button
+              className="guest-submit"
+              onClick={loading ? console.log() : guestSignIn}
+            >
+              {loading ? "Loading..." : "Guest"}
             </button>
           </div>
           <div className="dont-have">

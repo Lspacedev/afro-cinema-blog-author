@@ -10,7 +10,7 @@ function Stats() {
     try {
       setLoading(true);
 
-      const res = await fetch("http://localhost:3000/api/posts", {
+      const res = await fetch(`${import.meta.env.VITE_PROD_URL}/api/posts`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",

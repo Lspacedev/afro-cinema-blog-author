@@ -30,7 +30,7 @@ function CreatePost() {
         formData.append("image", image);
       }
 
-      const res = await fetch(`http://localhost:3000/api/posts`, {
+      const res = await fetch(`${import.meta.env.VITE_PROD_URL}/api/posts`, {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,

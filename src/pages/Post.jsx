@@ -24,13 +24,16 @@ function Post() {
     try {
       setLoading(true);
 
-      const res = await fetch(`http://localhost:3000/api/posts/${post_id}`, {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      const res = await fetch(
+        `${import.meta.env.VITE_PROD_URL}/api/posts/${post_id}`,
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
       const data = await res.json();
       if (res.ok) {
         setTitle(data.title);
@@ -67,13 +70,16 @@ function Post() {
         formData.append("image", image);
       }
 
-      const res = await fetch(`http://localhost:3000/api/posts/${post_id}`, {
-        method: "PUT",
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-        body: formData,
-      });
+      const res = await fetch(
+        `${import.meta.env.VITE_PROD_URL}/api/posts/${post_id}`,
+        {
+          method: "PUT",
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+          body: formData,
+        }
+      );
       const data = await res.json();
       if (res.ok) {
         alert(data.message);
@@ -93,7 +99,7 @@ function Post() {
       setLoading(true);
 
       const res = await fetch(
-        `http://localhost:3000/api/posts/${post_id}/publish`,
+        `${import.meta.env.VITE_PROD_URL}/api/posts/${post_id}/publish`,
         {
           method: "PUT",
           headers: {
@@ -119,7 +125,7 @@ function Post() {
       setLoading(true);
 
       const res = await fetch(
-        `http://localhost:3000/api/posts/${post_id}/unpublish`,
+        `${import.meta.env.VITE_PROD_URL}/api/posts/${post_id}/unpublish`,
         {
           method: "PUT",
           headers: {
@@ -145,13 +151,16 @@ function Post() {
     try {
       setLoading(true);
 
-      const res = await fetch(`http://localhost:3000/api/posts/${post_id}`, {
-        method: "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      const res = await fetch(
+        `${import.meta.env.VITE_PROD_URL}/api/posts/${post_id}`,
+        {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
       const data = await res.json();
       if (res.ok) {
         alert(data.message);
@@ -170,7 +179,7 @@ function Post() {
       setLoading(true);
 
       const res = await fetch(
-        `http://localhost:3000/api/posts/${post_id}/comments/${id}`,
+        `${import.meta.env.VITE_PROD_URL}/api/posts/${post_id}/comments/${id}`,
         {
           method: "DELETE",
           headers: {

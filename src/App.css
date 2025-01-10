@@ -228,6 +228,24 @@ textarea {
 .form-div .submit:hover {
   background-color: #0f0f0f;
 }
+.form-div .guest-submit {
+  width: 100%;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  margin: 15px;
+  padding: 15px 15px;
+  border: none;
+  outline: none;
+  border-radius: 7px;
+  font-size: 1rem;
+  border: 1px solid #0b0a07;
+  color: #0b0a07;
+  background-color: transparent;
+}
+.form-div .guest-submit:hover {
+  background-color: #0f0f0f3d;
+  cursor: pointer;
+}
 .Register .err {
   color: red;
   font-size: 0.7rem;
