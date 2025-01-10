@@ -15,14 +15,16 @@ body {
 }
 .file-upload {
   font-size: 1.2rem;
-  text-align: start;
+  text-align: center;
   width: 40%;
+  margin: 10px 0px;
 }
 
 input[type="file"] {
   display: inline-block;
   padding: 6px 12px;
   cursor: pointer;
+  margin: 5px;
 }
 .Home {
   height: inherit;
@@ -148,7 +150,28 @@ textarea {
   background-size: cover;
   overflow-y: auto;
 }
+.Login .logo {
+  font-size: 1.8rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 
+.Login .logo div {
+  font-weight: 900;
+}
+.Register .logo {
+  font-size: 1.8rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.Register .logo div {
+  font-weight: 900;
+}
 .page-container {
   height: 60%;
   width: 60%;
@@ -176,7 +199,7 @@ textarea {
   padding: 5px;
 }
 .Register .page-container {
-  height: 70%;
+  height: 75%;
 }
 .form-div input {
   width: 100%;
@@ -184,9 +207,10 @@ textarea {
   -moz-box-sizing: border-box;
   margin: 15px;
   padding: 15px 15px;
-  border: 1px solid #bbb;
+  border: 3px solid transparent;
   border-radius: 7px;
   font-size: 1rem;
+  outline: none;
 }
 .form-div .submit {
   width: 100%;
@@ -216,9 +240,18 @@ textarea {
   margin: 0px;
   padding: 0px;
 }
+.Login input:focus {
+  border: 3px solid #f0ec57;
+}
+.Register input:focus {
+  border: 3px solid #f0ec57;
+}
 .dont-have {
   display: flex;
   gap: 5px;
+}
+.dont-have .button:hover {
+  color: #c7c237;
 }
 .image-section {
   flex: 1;

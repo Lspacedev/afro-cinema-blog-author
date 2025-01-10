@@ -61,14 +61,15 @@ function CreatePost() {
     <div className="CreatePost">
       <div className="text-editor">TEXT EDITOR</div>
       <div className="post-inputs">
-        <div className="file-upload">Select post image</div>
-
-        <input
-          type="file"
-          name="image"
-          id="image"
-          onChange={(e) => setImage(e.target.files[0])}
-        />
+        <div className="file-upload">
+          Select post image
+          <input
+            type="file"
+            name="image"
+            id="image"
+            onChange={(e) => setImage(e.target.files[0])}
+          />
+        </div>
         <br />
         <input type="text" name="title" onChange={handleTitleChange} />
         <br />

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
+import { ImVideoCamera } from "react-icons/im";
 
 function Register() {
   const [username, setUsername] = useState("");
@@ -53,8 +54,10 @@ function Register() {
     <div className="Register">
       <div className="page-container">
         <div className="form-section">
-          <h2>Afro-cinema | Author</h2>
-
+          <div className="logo">
+            <ImVideoCamera />
+            <div>Afro-Cinema | Author</div>
+          </div>
           <p>Register an account.</p>
           <div className="dont-have">
             <div>Already an account?</div>
