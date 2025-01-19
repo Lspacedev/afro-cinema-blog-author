@@ -130,7 +130,7 @@ textarea {
   font-size: 1rem;
 }
 .Login {
-  height: inherit;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -140,7 +140,7 @@ textarea {
   background-size: cover;
 }
 .Register {
-  height: inherit;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -150,17 +150,7 @@ textarea {
   background-size: cover;
   overflow-y: auto;
 }
-.Login .logo {
-  font-size: 1.8rem;
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
 
-.Login .logo div {
-  font-weight: 900;
-}
 .Register .logo {
   font-size: 1.8rem;
   font-weight: 500;
@@ -171,17 +161,6 @@ textarea {
 
 .Register .logo div {
   font-weight: 900;
-}
-.page-container {
-  height: 70%;
-  width: 60%;
-  display: flex;
-  align-items: center;
-  border-radius: 25px;
-  box-shadow: 1px 0px 3px 1px rgba(71, 71, 71, 0.267);
-  border-radius: 15px;
-  background: rgba(255, 255, 255, 0.25);
-  backdrop-filter: saturate(180%) blur(10px);
 }
 
 .page-container .form-section {
@@ -198,9 +177,7 @@ textarea {
   align-items: center;
   padding: 5px;
 }
-.Register .page-container {
-  height: 75%;
-}
+
 .form-div input {
   width: 100%;
   box-sizing: border-box;
@@ -496,10 +473,7 @@ textarea {
   .CreatePost textarea {
     width: 90%;
   }
-  .page-container {
-    height: 90%;
-    width: 90%;
-  }
+
   .image-section {
     display: none;
   }
@@ -525,4 +499,79 @@ textarea {
 .delete-comment {
   font-size: 1.4rem;
   cursor: pointer;
+}
+
+@media (min-width: 320px) {
+  .page-container {
+    height: 90%;
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    box-shadow: 1px 0px 3px 1px rgba(71, 71, 71, 0.267);
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: saturate(180%) blur(10px);
+    padding: 15px 0px;
+    margin: 15px 0px;
+  }
+  .image-section {
+    display: none;
+  }
+
+  .Login .logo {
+    font-size: 1.8rem;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .Login .logo div {
+    font-weight: 900;
+  }
+  .Register .logo {
+    font-size: 1.8rem;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .Register .logo div {
+    font-weight: 900;
+  }
+}
+@media (min-width: 480px) {
+}
+@media (min-width: 600px) {
+}
+@media (min-width: 801px) {
+  .page-container {
+    width: 95%;
+    height: 50%;
+  }
+  .image-section {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media (min-width: 1025px) {
+  .page-container {
+    width: 85%;
+    height: 50%;
+  }
+}
+@media (min-width: 1281px) {
+  .page-container {
+    width: 75%;
+    height: 50%;
+  }
 }
