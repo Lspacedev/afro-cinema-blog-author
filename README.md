@@ -2,6 +2,10 @@
 
 Afro Cinema Blog Author app, to allow users to manage blog posts.
 
+### Afro Cinema Blog Client App | Frontend
+
+[https://github.com/Lspacedev/afro-cinema-blog-client](https://github.com/Lspacedev/afro-cinema-blog-client)
+
 ### Afro Cinema Blog App | Backend
 
 [https://github.com/Lspacedev/afro-cinema-blog-api](https://github.com/Lspacedev/afro-cinema-blog-api)
